@@ -1,0 +1,61 @@
+Function "asmlimitBinaryExp" not defined.
+Make breakpoint pending on future shared library load? (y or [n]) [answered N; input not from terminal]
+Breakpoint 1 at 0x11a0
+Breakpoint 2 at 0x11e6
+<<<---INICIO--->>>
+
+Breakpoint 1, 0x00005555555551a0 in calculo ()
+<<<---VALOR DENTRO LA EXPONENTE--->>>
+$1 = {
+  v4_float = {1.20000005, 0, 0, 0},
+  v2_double = {5.271833295155611e-315, 0},
+  v16_int8 = {-102, -103, -103, 63, 0 <repeats 12 times>},
+  v8_int16 = {-26214, 16281, 0, 0, 0, 0, 0, 0},
+  v4_int32 = {1067030938, 0, 0, 0},
+  v2_int64 = {1067030938, 0},
+  uint128 = 1067030938
+}
+<<<---BUCLE1--->>>
+el valor de N es 5
+
+Breakpoint 2, 0x00005555555551e6 in no_impar ()
+$2 = {
+  v4_float = {1.20000005, 0, 0, 0},
+  v2_double = {5.271833295155611e-315, 0},
+  v16_int8 = {-102, -103, -103, 63, 0 <repeats 12 times>},
+  v8_int16 = {-26214, 16281, 0, 0, 0, 0, 0, 0},
+  v4_int32 = {1067030938, 0, 0, 0},
+  v2_int64 = {1067030938, 0},
+  uint128 = 1067030938
+}
+
+Breakpoint 1, 0x00005555555551a0 in calculo ()
+el valor de N es 2
+
+Breakpoint 2, 0x00005555555551e6 in no_impar ()
+$3 = {
+  v4_float = {1.20000005, 0, 0, 0},
+  v2_double = {5.271833295155611e-315, 0},
+  v16_int8 = {-102, -103, -103, 63, 0 <repeats 12 times>},
+  v8_int16 = {-26214, 16281, 0, 0, 0, 0, 0, 0},
+  v4_int32 = {1067030938, 0, 0, 0},
+  v2_int64 = {1067030938, 0},
+  uint128 = 1067030938
+}
+
+Breakpoint 1, 0x00005555555551a0 in calculo ()
+el valor de N es 1
+
+Breakpoint 2, 0x00005555555551e6 in no_impar ()
+$4 = {
+  v4_float = {2.48832011, 0, 0, 0},
+  v2_double = {5.3151087471670122e-315, 0},
+  v16_int8 = {-93, 64, 31, 64, 0 <repeats 12 times>},
+  v8_int16 = {16547, 16415, 0, 0, 0, 0, 0, 0},
+  v4_int32 = {1075789987, 0, 0, 0},
+  v2_int64 = {1075789987, 0},
+  uint128 = 1075789987
+}
+[Inferior 1 (process 29970) exited normally]
+limitBinaryExp.gdb:58: Error in sourced command file:
+No registers.

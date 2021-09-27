@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 
 float cLimitBinaryExp(int N, float valor);
 extern float asmLimitBinaryExp(int N);
@@ -7,6 +8,7 @@ extern float asmLimitBinaryExp(int N);
 int main() {
     float variC,variASM,valor;
     int N = 5;
+    struct timespec time1, time2;
 
     valor = (float) 1/N;
     valor += 1;
@@ -14,9 +16,20 @@ int main() {
     variC = cLimitBinaryExp(N, valor);
     variASM = asmLimitBinaryExp(N);
 
+    clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &time1);
+    clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &time2);   
+    double tC = (double)((time2.tv_sec-time1.tv_sec) + (time2.tv_nsec-time1.tv_nsec)/1e9);
+
+    clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &time1);
+    clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &time2); 
+    double tASM = (double)((time2.tv_sec-time1.tv_sec) + (time2.tv_nsec-time1.tv_nsec)/1e9);
+
     printf("El valor del limite en C es: %f\n",variC);
     printf("El valor del limite en ASM es: %f\n",variASM);
 
+    printf("El tiempo de ejecución en C es: %.5f ms\n", tC*1e3);
+    printf("El tiempo de ejecución en ASM es: %.5f ms\n", tASM*1e3);
+    printf("El speed-up es: %.2f \n", tC/tASM);
 }
 
 float cLimitBinaryExp(int N, float valor){
